@@ -1,10 +1,11 @@
 body {
     margin: 0;
-    background-color: rgb(118, 208, 240);
-    background-blend-mode: rgb(246, 205, 212);
+    background-color: rgb(51, 51, 51);
     text-align: center;
-
+    background-image: linear-gradient(rgb(151, 205, 255), rgb(255, 195, 249));
     h1 {
-        font-family: Arial;
+        font-family: Arial, "Times New Roman";
+        font-size: 22px;
+        font-weight: bold;   
     }
 }
