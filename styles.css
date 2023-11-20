@@ -64,7 +64,6 @@ body {
 
 .Welcome-Text {
   text-align: right;
-  max-width: 10rem;
 }
 
 @keyframes rotation {
