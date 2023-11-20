@@ -1,28 +1,38 @@
+:root {
+    --clr-1: rgb(195, 229, 255);
+    --clr-2: rgb(126, 185, 225);
+    --clr-3: rgb(138, 116, 190);
+    --clr-4: rgb(218, 157, 225);
+    --clr-5: rgb(248, 200, 255);
+}
+
 body {
-    background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);
-    font-family: system-ui;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    color: White;
-    margin: 0;
+    background-color: rgb(33, 34, 42); ;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
 }
 
-.Site-Title {
-    font-size: 3rem;
-    font-weight: bold;   
-    text-align: center;
-} 
+.Card {
+    height: 60vh;
+    aspect-ratio: 1/1.5;
+    background: var(--clr-1);
+    border-radius: 0.5rem;
 
-.Section-Title {
-    font-size: 2rem;   
-    text-align: center;
+    position: relative;
 }
 
-.wrapper {
-    max-width: 30rem;  
-    text-align: center;
-    margin-inline: auto;
-    padding-inline: 3rem;
-    color: rgb(47, 47, 47);
+.Card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--clr-3),var(--clr-4),var(--clr-5));
+    border-radius: inherit;
 }
+
+.card::after {
+    filter: blur(3.5rem);
+}
+
 
