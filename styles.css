@@ -66,6 +66,10 @@ body {
   width: 15rem;
 }
 
+.link {
+  color: rgb(36, 231, 36);
+}
+
 @keyframes rotation {
     0% {
       --gradient-angle: 0deg;
