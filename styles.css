@@ -38,11 +38,11 @@ body {
     z-index: -1;
     background: conic-gradient(
       from var(--gradient-angle),
-      var(--clr-3),
+      var(--clr-2),
       var(--clr-4),
       var(--clr-5),
       var(--clr-4),
-      var(--clr-3),
+      var(--clr-2),
     );
     border-radius: inherit;
     animation: rotation 20s linear infinite;
