@@ -1,3 +1,10 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
 :root {
     --clr-1: rgb(195, 229, 255);
     --clr-2: rgb(126, 185, 225);
@@ -8,13 +15,13 @@
 
 body {
     background-color: rgb(33, 34, 42); ;
-    min-height: 100vh;
+    min-height: 140vh;
     display: grid;
     place-content: center;
 }
 
 .Card {
-    height: 60vh;
+    height: 100vh;
     aspect-ratio: 1/1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
@@ -26,13 +33,32 @@ body {
 .card::after {
     content: "";
     position: absolute;
-    inset: 0;
-    background: linear-gradient(var(--clr-3),var(--clr-4),var(--clr-5));
+    inset: -0.5rem;
     border-radius: inherit;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
 }
 
 .card::after {
     filter: blur(3.5rem);
 }
 
+@keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+  
 
