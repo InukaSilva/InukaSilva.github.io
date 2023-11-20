@@ -63,10 +63,12 @@ body {
 }
 
 .Welcome-Text {
+  text-align: right;
   width: 15rem;
 }
 
 .link {
+  text-decoration: none;
   color: rgb(36, 231, 36);
 }
 
