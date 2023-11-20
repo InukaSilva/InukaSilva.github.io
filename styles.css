@@ -1,11 +1,26 @@
 body {
     margin: 0;
     background-color: rgb(51, 51, 51);
-    text-align: center;
-    background-image: linear-gradient(rgb(151, 205, 255), rgb(255, 195, 249));
-    h1 {
-        font-family: Arial, "Times New Roman";
-        font-size: 22px;
-        font-weight: bold;   
-    }
+    font-family: system-ui;
+    font-size: 1.25rem;
+    font-weight: bold;  
+    line-height: 1.5; 
 }
+
+.wrapper {
+    max-width: 50rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 3rem;
+    font-weight: bold;  
+    text-align: center;
+}
+
+.welcome-screen {
+    background-image: linear-gradient(rgb(151, 205, 255), rgb(255, 195, 249));
+}
+
