@@ -62,6 +62,10 @@ body {
   font-weight: bold;
 }
 
+.Welcome-Text {
+  text-align: right;
+}
+
 @keyframes rotation {
     0% {
       --gradient-angle: 0deg;
