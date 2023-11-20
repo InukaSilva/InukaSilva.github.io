@@ -6,7 +6,7 @@
 
 
 :root {
-    --clr-1: rgb(33, 34, 42);
+    --clr-1: rgb(58, 62, 92);
     --clr-2: rgb(126, 185, 225);
     --clr-3: rgb(138, 116, 190);
     --clr-4: rgb(218, 157, 225);
@@ -28,7 +28,8 @@ body {
     aspect-ratio: 2/1;
     background: var(--clr-1);
     border-radius: 0.5rem;
-
+    margin-inline: auto;
+    padding-inline: 3rem;
     position: relative;
 }
 
@@ -55,9 +56,9 @@ body {
     filter: blur(3.5rem);
 }
 
-.Welcome-Text {
-  margin-inline: auto;
-  padding-inline: 3rem;
+.Welcome-Header {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 @keyframes rotation {
