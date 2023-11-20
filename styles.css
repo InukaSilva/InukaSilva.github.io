@@ -5,17 +5,27 @@ body {
     line-height: 1.5;
     color: White;
     margin: 0;
-    text-align: center;
 }
 
-.Welcome-Message {
+.Site-Title {
     font-size: 3rem;
     font-weight: bold;   
     text-align: center;
-    margin-inline: auto;
-    padding-inline: 3rem;
 } 
 
-.About-Me {
+.Section-Title {
+    font-size: 2rem;   
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 50rem;  
+    text-align: center;
+    margin-inline: auto;
+    padding-inline: 3rem;
+}
+
+section {
     background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);
 }
+
