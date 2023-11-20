@@ -17,7 +17,7 @@ body {
     background-color: var(--clr-1);
     min-height: 100vh;
     display: grid;
-    place-content: center;
+    place-content: right;
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure;
