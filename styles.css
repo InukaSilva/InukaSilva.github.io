@@ -63,8 +63,8 @@ body {
 }
 
 .Welcome-Text {
-  text-align: right;
-  width: 10rem;
+  text-align: left;
+  width: 15rem;
 }
 
 @keyframes rotation {
