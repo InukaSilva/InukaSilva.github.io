@@ -23,6 +23,7 @@ body {
 .Card {
     height: 60vh;
     aspect-ratio: 2/1;
+    background: var(--clr-1);
     border-radius: 0.5rem;
 
     position: relative;
@@ -41,7 +42,7 @@ body {
       var(--clr-4),
       var(--clr-5),
       var(--clr-4),
-      var(--clr-2),
+      var(--clr-2)
     );
     border-radius: inherit;
     animation: rotation 20s linear infinite;
