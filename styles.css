@@ -24,7 +24,7 @@ body {
 }
 
 .Card {
-    height: 80vh;
+    height: 70vh;
     aspect-ratio: 2/1;
     background: var(--clr-1);
     border-radius: 0.5rem;
