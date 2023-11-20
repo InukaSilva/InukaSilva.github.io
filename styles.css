@@ -57,6 +57,7 @@ body {
 }
 
 .Welcome-Header {
+  text-align: center;
   font-size: 3rem;
   font-weight: bold;
 }
