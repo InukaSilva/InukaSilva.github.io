@@ -26,7 +26,8 @@ body {
 }
 
 .About-Me{
-    max-width: 40rem;
-    background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);  
+    width: 40rem;
+    background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);
+    align-self: center;
 }
 
