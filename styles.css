@@ -1,5 +1,5 @@
 body {
-    background: rgb(20, 20, 20);
+    background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);
     font-family: system-ui;
     font-size: 1.25rem;
     line-height: 1.5;
@@ -27,7 +27,6 @@ body {
 
 .About-Me{
     width: 40rem;
-    background-image: linear-gradient(45deg, rgb(155, 237, 244), pink);
-    align-self: center;
+    color: rgb(47, 47, 47);
 }
 
