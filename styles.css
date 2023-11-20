@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(47, 47, 47);
     font-family: system-ui;
     font-size: 1.25rem;
     font-weight: bold;  
@@ -14,13 +14,13 @@ body {
     text-align: center;
 }
 
-.site-title {
+.sitetitle {
     font-size: 3rem;
     font-weight: bold;  
     text-align: center;
 }
 
-.welcome-screen {
-    background-image: linear-gradient(rgb(151, 205, 255), rgb(255, 195, 249));
+.welcomescreen {
+    background-image: linear-gradient(45deg, rgb(151, 205, 255), rgb(255, 195, 249));
 }
 
