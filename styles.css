@@ -1,1 +1,16 @@
+body {
+    background: rgb(34, 34, 34);
+    font-family: system-ui;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: White;
+    margin: 0;
+}
 
+.Welcome-Message {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-inline: auto;
+    padding-inline: 3rem;
+} 
