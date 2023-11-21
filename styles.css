@@ -65,9 +65,13 @@ body {
 .Welcome-Text {
 }
 
-.link {
+.Project-link {
   text-decoration: none;
   color: rgb(36, 231, 36);
+}
+.Gallery-Link {
+  text-decoration: none;
+  color: rgb(231, 36, 36);
 }
 
 @keyframes rotation {
