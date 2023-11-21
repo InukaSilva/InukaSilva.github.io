@@ -20,14 +20,16 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure;
+    place-content: center;
 }
 
 .Card {
-    height: 80vh;
+    height: 30%;
     aspect-ratio: 1.5/1;
     background: var(--clr-1);
     border-radius: 0.5rem;
-    margin-inline: auto;
+    margin-left: 0;
+    margin-right: auto;
     padding-inline: 3rem;
     position: relative;
 }
