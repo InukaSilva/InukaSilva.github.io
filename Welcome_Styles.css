@@ -19,11 +19,10 @@ body {
     display: grid;
     font-family: system-ui;
     font-size: 1.25rem;
-    place-content: center;
     color: azure;
 }
 
-.Card {
+.Card1 {
     height: 80vh;
     aspect-ratio: 1.5/1;
     background: var(--clr-1);
