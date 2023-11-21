@@ -22,7 +22,7 @@ body {
     color: azure;
 }
 
-.Card1 {
+.Card {
     height: 80vh;
     aspect-ratio: 1.5/1;
     background: var(--clr-1);
