@@ -5,3 +5,8 @@
     --clr-4: rgb(218, 157, 225);
     --clr-5: rgb(248, 200, 255);
 }
+
+body {
+    background-color: var(--clr-1);
+    color: azure;
+}
