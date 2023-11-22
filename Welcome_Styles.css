@@ -21,6 +21,7 @@ body {
     font-size: 1.25rem;
     color: azure; 
     place-content: center;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .card-main{
@@ -41,8 +42,8 @@ body {
     position: relative;
 }
 
-.card::before,
-.card::after {
+.card-main::before,
+.card-main::after {
     content: "";
     position: absolute;
     inset: -0.5rem;
@@ -59,7 +60,29 @@ body {
     border-radius: inherit;
     animation: rotation 20s linear infinite;
 }
-.card::after {
+.card-main::after {
+    filter: blur(3rem);
+}
+
+.card-links::before,
+.card-links::after {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+    border-radius: inherit;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-2),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-2)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+.card-links::after {
     filter: blur(3rem);
 }
 
