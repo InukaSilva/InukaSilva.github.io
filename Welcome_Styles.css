@@ -16,12 +16,14 @@
 body {
     background-color: var(--clr-1);
     min-height: 100vh;
-    display: grid;
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure; 
-    place-content: center;
-    grid-template-columns: 25% 75%;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .card-main{
