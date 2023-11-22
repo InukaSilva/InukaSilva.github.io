@@ -71,7 +71,7 @@ body {
 .Gallery-Link {
   text-decoration: none;
   color: rgb(231, 36, 36);
-}
+}*/
 @keyframes rotation {
     0% {
       --gradient-angle: 0deg;
@@ -80,7 +80,7 @@ body {
       --gradient-angle: 360deg;
     }
   }
-  */
+  
 
   
 
