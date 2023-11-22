@@ -99,12 +99,14 @@ body {
 }
 .Project-link {
   text-align: center;
-  font-size: large;
+  font-size: 3rem;
+  color: azure;
   text-decoration: none;
 }
 .Gallery-Link {
   text-align: center;
-  font-size: large;
+  font-size: 3rem;
+  color: azure;
   text-decoration: none;
 }
 @keyframes rotation {
