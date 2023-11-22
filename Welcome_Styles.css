@@ -19,12 +19,12 @@ body {
     display: grid;
     font-family: system-ui;
     font-size: 1.25rem;
-    color: azure;
-    place-content: center;    
+    color: azure; 
 }
 
 .Parent{ 
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
