@@ -29,7 +29,7 @@ body {
 
 .card-main{
     height: 40rem;
-    aspect-ratio: 1.5/1;
+    width: 60rem;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
@@ -38,7 +38,7 @@ body {
 
 .card-links {
   height: 40rem;
-  aspect-ratio: 1/1;
+  width: 40rem;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
