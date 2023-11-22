@@ -25,11 +25,12 @@ body {
 .Parent{ 
   display: flex;
   align-items: center;
+  justify-content: space-around;
   justify-content: space-between;
 }
 
 .Card {
-    height: 30rem;
+    height: 40rem;
     aspect-ratio: 1/1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
