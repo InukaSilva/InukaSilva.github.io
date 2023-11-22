@@ -21,7 +21,6 @@ body {
     font-size: 1.25rem;
     color: azure; 
     place-content: center;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .card-main{
