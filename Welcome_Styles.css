@@ -20,23 +20,25 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure; 
+    place-content: center;
 }
 
-.Parent{ 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  justify-content: space-between;
-}
-
-.Card {
+.card-main{
     height: 40rem;
     aspect-ratio: 1/1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
     position: relative;
-    padding-inline: 5rem;
+}
+
+.card-links {
+  height: 40rem;
+  aspect-ratio: 1/0.5;
+    background: var(--clr-1);
+    border-radius: 0.5rem;
+    padding-inline: 3rem;
+    position: relative;
 }
 
 .card::before,
