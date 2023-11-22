@@ -21,10 +21,11 @@ body {
     font-size: 1.25rem;
     color: azure; 
     place-content: center;
+    grid-template-columns: 25% 75%;
 }
 
 .card-main{
-    height: 40rem;
+    height: 50rem;
     aspect-ratio: 1/1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
@@ -34,7 +35,7 @@ body {
 
 .card-links {
   height: 40rem;
-  aspect-ratio: 1/0.5;
+  aspect-ratio: 0.5/1;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
