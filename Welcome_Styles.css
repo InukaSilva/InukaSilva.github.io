@@ -26,7 +26,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: left;
-  gap: 8rem;
+  gap: 6rem;
 }
 
 .card-main{
