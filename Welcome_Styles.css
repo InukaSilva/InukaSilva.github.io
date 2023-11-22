@@ -22,13 +22,14 @@ body {
 }
 
 .grid {
+  margin: 5rem;
   display: grid;
   grid-auto-flow: column;
 }
 
 .card-main{
-    height: 50rem;
-    aspect-ratio: 1/1.5;
+    height: 40rem;
+    aspect-ratio: 1/2;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
