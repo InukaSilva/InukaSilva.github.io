@@ -99,13 +99,13 @@ body {
 }
 .Project-link {
   text-align: center;
+  font-size: large;
   text-decoration: none;
-  color: rgb(36, 231, 36);
 }
 .Gallery-Link {
   text-align: center;
+  font-size: large;
   text-decoration: none;
-  color: rgb(231, 36, 36);
 }
 @keyframes rotation {
     0% {
