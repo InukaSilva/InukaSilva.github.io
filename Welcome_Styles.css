@@ -33,6 +33,7 @@ body {
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
+    position: relative;
 }
 
 .card-links {
@@ -41,6 +42,7 @@ body {
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
+    position: relative;
 }
 
 .card-main::before,
