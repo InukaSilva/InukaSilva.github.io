@@ -22,14 +22,16 @@ body {
 }
 
 .grid {
-  margin: 5rem;
+  margin-inline: 5rem;
+  align-items: center;
   display: grid;
   grid-auto-flow: column;
 }
 
 .card-main{
     height: 40rem;
-    aspect-ratio: 1/2;
+    width: 60rem;
+    /*aspect-ratio: 1/2; */
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
@@ -38,7 +40,7 @@ body {
 
 .card-links {
   height: 40rem;
-  aspect-ratio: 0.5/1;
+  aspect-ratio: 1/2;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
