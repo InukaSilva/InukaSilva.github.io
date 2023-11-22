@@ -20,16 +20,18 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure;
-    place-content: center;
+    
+}
+
+.Parent{ 
+  display: flex;
 }
 
 .Card {
-    height: 30%;
-    aspect-ratio: 1.5/1;
+    height: 30rem;
+    aspect-ratio: 1/1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
-    margin-left: 0;
-    margin-right: auto;
     padding-inline: 3rem;
     position: relative;
 }
@@ -52,20 +54,16 @@ body {
     border-radius: inherit;
     animation: rotation 20s linear infinite;
 }
-
 .card::after {
-    filter: blur(3.5rem);
+    filter: blur(3rem);
 }
 
+/*
 .Welcome-Header {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
 }
-
-.Welcome-Text {
-}
-
 .Project-link {
   text-decoration: none;
   color: rgb(36, 231, 36);
@@ -74,7 +72,6 @@ body {
   text-decoration: none;
   color: rgb(231, 36, 36);
 }
-
 @keyframes rotation {
     0% {
       --gradient-angle: 0deg;
@@ -83,6 +80,7 @@ body {
       --gradient-angle: 360deg;
     }
   }
+  */
 
   
 
