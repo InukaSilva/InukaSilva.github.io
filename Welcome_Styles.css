@@ -22,9 +22,10 @@ body {
 }
 
 .grid {
+  margin: 3rem;
   align-items: center;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   gap: 5rem;
 }
