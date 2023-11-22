@@ -25,6 +25,7 @@ body {
 
 .Parent{ 
   display: flex;
+  justify-content: space-between;
 }
 
 .Card {
