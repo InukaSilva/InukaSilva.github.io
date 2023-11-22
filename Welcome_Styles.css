@@ -31,7 +31,7 @@ body {
 
 .card-main{
     height: 35rem;
-    aspect-ratio: 4/2;
+    aspect-ratio: 2.5/1;
     background: var(--clr-1);
     border-radius: 0.5rem;
     padding-inline: 3rem;
