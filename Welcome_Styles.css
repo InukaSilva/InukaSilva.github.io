@@ -20,7 +20,7 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     color: azure;
-    
+    place-content: center;    
 }
 
 .Parent{ 
@@ -34,6 +34,7 @@ body {
     border-radius: 0.5rem;
     padding-inline: 3rem;
     position: relative;
+    padding-inline: 5rem;
 }
 
 .card::before,
