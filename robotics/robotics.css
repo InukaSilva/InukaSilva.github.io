@@ -1,6 +1,7 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
     min-height: 50vh;
     background: rgb(88, 94, 141);
     margin: 0;
@@ -8,4 +9,23 @@ body {
     overflow: hidden;
     animation: 0.5s fadeInUp;
     color: azure;
+}
+
+.content .button {
+    width: 13vh;
+    text-decoration: none;
+    background-color: rgb(158, 227, 245);
+    border-radius: 10vh;
+    color: rgb(43, 43, 82);
+    padding: 1.5vh 1.5vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.content .button:hover {
+    background-color: rgb(43, 43, 82);
+    color: rgb(158, 227, 245);
 }
