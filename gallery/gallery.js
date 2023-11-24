@@ -1,9 +1,4 @@
-const imageList = [{ src: "art/Image_1.jpg", alt: "image" }, 
-{ src: "art/Image_2", alt: "image" }, 
-{ src: "art/Image_3", alt: "image" }, 
-{ src: "art/Image_4", alt: "image" }, 
-{ src: "art/Image_5", alt: "image" }, 
-{ src: "art/Image_6", alt: "image" },];
+const imageList = [{ src: "art/Image_1.jpg", alt: "image" }, { src: "art/Image_2", alt: "image" }, { src: "art/Image_3", alt: "image" }, { src: "art/Image_4", alt: "image" }, { src: "art/Image_5", alt: "image" }, { src: "art/Image_6", alt: "image" },];
 
 const row = document.querySelector(".row");
 for (let i = 0; i < 3; i++) {
