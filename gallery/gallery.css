@@ -24,13 +24,23 @@ body {
     height: 3px; /* Set the height (thickness) of the line */
     border: none; /* Remove the default border */
 }
+header {
+  font-size: 10vh;
+  font-weight: bold;
+}
 
 h1 {
-  font-size: 5vh;
+  font-size: 4vh;
 }
 h2 {
-  font-size: 5vh;
+  font-size: 4vh;
 }
+
+.column img:hover {
+  transform:scale(1.025);
+  z-index: 2;
+}
+
 .row {
     display: flex;
     justify-content: center;
@@ -49,6 +59,7 @@ h2 {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+    transition: 1s;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
