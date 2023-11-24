@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+    background: rgb(88, 94, 141);
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    animation: 0.5s fadeInUp;
+    color: azure;
+}
