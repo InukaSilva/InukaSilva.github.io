@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    typeH1(); // Start the typing effect for h1 when the page loads
-    setTimeout(typeH3, textH1.length * 100 + textH3.length * 5); // Start the typing effect for h3 after a delay
+    setTimeout(function () {
+        typeH1(); // Start the typing effect for h1 after a delay
+        setTimeout(typeH3, textH1.length * 110); // Start the typing effect for h3 after a delay
+    }, 1000); // Adjust the delay before the typing starts (milliseconds)
 });
 
