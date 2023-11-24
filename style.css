@@ -8,7 +8,6 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 50vh;
     background: rgb(88, 94, 141);
     margin: 0;
