@@ -1,6 +1,8 @@
 body {
-    background: rgb(88, 94, 141);;
+  font-family: system-ui, -apple-system;
+    background: rgb(224, 220, 220);
     animation: 0.5s fadeInUp;
+    text-align: center;
 }
 
 @keyframes fadeInUp {
@@ -14,7 +16,21 @@ body {
     }
   }
   
+.divider {
+    margin-top: 5vh;
+    width: 95%;
+    color: #000000; /* Set the color using a hex code or a color name */
+    background-color: #000000; /* Set the background color if needed */
+    height: 3px; /* Set the height (thickness) of the line */
+    border: none; /* Remove the default border */
+}
 
+h1 {
+  font-size: 5vh;
+}
+h2 {
+  font-size: 5vh;
+}
 .row {
     display: flex;
     justify-content: center;
