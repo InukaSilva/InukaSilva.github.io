@@ -17,7 +17,7 @@ body {
   }
   
 .divider {
-    margin-top: 5vh;
+    margin-top: 2vh;
     width: 95%;
     color: #000000; /* Set the color using a hex code or a color name */
     background-color: #000000; /* Set the background color if needed */
@@ -27,17 +27,14 @@ body {
 header {
   font-size: 10vh;
   font-weight: bold;
-}
-
-h1 {
-  font-size: 4vh;
-}
-h2 {
-  font-size: 4vh;
+  border-style: solid;
+  border-width: auto;
+  margin-bottom: 2vh;
+  padding: 0 4px;
 }
 
 .column img:hover {
-  transform:scale(1.025);
+  transform:scale(1.0125);
   z-index: 2;
 }
 
