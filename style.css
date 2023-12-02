@@ -60,8 +60,8 @@ h3 {
 }
 
 .myimg {
-    width: 15vh;
-    height: 15vh;
+    width: 13vh;
+    height: 13vh;
     object-fit: cover;
     border-radius: 50%;
 }
