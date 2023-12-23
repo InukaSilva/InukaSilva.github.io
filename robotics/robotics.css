@@ -1,3 +1,11 @@
 body {
-    background: rgb(210, 233, 253);
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+    background: #585f8d;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    animation: 0.5s fadeInUp;
+    color: #f0ffff;
 }
