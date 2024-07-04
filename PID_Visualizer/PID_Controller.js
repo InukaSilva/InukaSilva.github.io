@@ -43,7 +43,7 @@ class pidController {
 
 class robot {
     constructor (){
-            this.target_pos = 20.0;
+            this.target_pos = 30.0;
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
@@ -103,7 +103,7 @@ class robot {
     get_acceleration(current_velocity){
         let time = this.get_time_seconds();
         
-        let acceleration = (current_velocity - this.previous_velocity)/(time - this.previous_time);
+        let acceleration = (current_velocity - this.previous_velocity)/(time - this.previous_time || 1);
         this.previous_time = time;
         this.previous_velocity = current_velocity;
 
@@ -133,13 +133,14 @@ class robot {
 
     get_distance_travelled(velocity, acceleration){
         let time = this.get_time_seconds();
+        //let time_diff = time - this.previous_time;
         let distance = (velocity * time) + 0.5 * acceleration * (time * time);
     
         this.current_pos += distance ;
         let total_distance = this.current_pos;  
     
-        console.log("total distance" + total_distance);
-        return total_distance   
+        console.log("total distance: " + total_distance);
+        return total_distance 
     }
     
 }
@@ -154,21 +155,36 @@ function visualizer (){
         position = robotObject.get_distance_travelled(velocity, final_acceleration);   
     
         positionArray.push(position);
-        timeArray.push(robotObject.get_time_seconds);
+        timeArray.push(robotObject.get_time_seconds());
         targetArray.push(robotObject.get_tar_pos());
-    
+         
+        setInterval(function(){
+            Plotly.extendTraces("chart", {
+                x: [timeArray, timeArray],
+                y: [positionArray, targetArray]
+            }, [0, 1]);
+
+        }, 200);
+        
         robotObject.increase_time();
     }
+
+    console.log("robot position: " + position);
+    console.log("Time Array: ", timeArray);
+    console.log("Position Array: ", positionArray);
+    console.log("Target Array: ", targetArray);
+
     console.log("robot position:" + position);
 }
 
 function run(){
-    kp = document.getElementById("kp").value;
-    ki = document.getElementById("ki").value;
-    kd = document.getElementById("kd").value;
+    kp = parseFloat(document.getElementById("kp").value);
+    ki = parseFloat(document.getElementById("ki").value);
+    kd = parseFloat(document.getElementById("kd").value);
     position = 0.0; 
 
-    if (isNaN(kp)== false && isNaN(ki)== false && isNaN(kd)== false){
+    if (!isNaN(kp) && !isNaN(ki) && !isNaN(kd)){
+        controllerObject = new pidController(kp, ki, kd);
         controllerObject.reset();
         robotObject.reset();
 
@@ -201,22 +217,34 @@ const data = [{
     x: timeArray,
     y: positionArray,
     mode: "lines",
-    type: "scatter"
+    type: "scatter",
+    name: "Position"
+}, {
+    x: timeArray,
+    y: targetArray,
+    mode: "lines",
+    type: "scatter",
+    name: "Target Position"
 }];
 
 const layout = {
-    xaxis: {range: [0, 20], title: "Time (s)"},
+    xaxis: {range: [0, 10], title: "Time (s)"},
     yaxis: {range: [0, 40], title: "Position (m)"},
     title: "Position vs Time"
 };
 
 
 //visualizer();
-
-Plotly.newPlot("chart", data, layout);
-
-
-
-
-
-
+Plotly.newPlot("chart", [{
+    x: timeArray,
+    y: positionArray,
+    mode: "lines",
+    type: "scatter",
+    name: "Position"
+}, {
+    x: timeArray,
+    y: targetArray,
+    mode: "lines",
+    type: "scatter",
+    name: "Target Position"
+}], layout);
