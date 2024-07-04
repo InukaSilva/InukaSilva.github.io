@@ -146,6 +146,7 @@ class robot {
 }
 
 function visualizer (){
+    //10000
     while (robotObject.time < 10000){
         let power = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
         let velocity = robotObject.get_velocity(power);
@@ -157,24 +158,26 @@ function visualizer (){
         positionArray.push(position);
         timeArray.push(robotObject.get_time_seconds());
         targetArray.push(robotObject.get_tar_pos());
-         
-        setInterval(function(){
-            Plotly.extendTraces("chart", {
-                x: [timeArray, timeArray],
-                y: [positionArray, targetArray]
-            }, [0, 1]);
-
-        }, 200);
-        
+ 
         robotObject.increase_time();
     }
+        //visualizer();
+    Plotly.newPlot("chart", [{
+        x: timeArray,
+        y: positionArray,
+        type: "scatter",
+        name: "Position"
+    }, {
+        x: timeArray,
+        y: targetArray,
+        type: "scatter",
+        name: "Target Position"
+    }], layout);
 
     console.log("robot position: " + position);
     console.log("Time Array: ", timeArray);
     console.log("Position Array: ", positionArray);
     console.log("Target Array: ", targetArray);
-
-    console.log("robot position:" + position);
 }
 
 function run(){
@@ -187,6 +190,10 @@ function run(){
         controllerObject = new pidController(kp, ki, kd);
         controllerObject.reset();
         robotObject.reset();
+        
+        timeArray = [];
+        positionArray = [];
+        targetArray = [];
 
         visualizer();
     }
@@ -205,34 +212,18 @@ let controllerObject = new pidController(kp, ki, kd);
 const robotObject = new robot();
 let position = 0.0;
 
-const positionArray = [];
-const timeArray = [];
-const targetArray = [];
+let positionArray = [];
+let timeArray = [];
+let targetArray = [];
 positionArray.push(position);
 timeArray.push(0.0);
 targetArray.push(robotObject.get_tar_pos());
-
-
-const data = [{
-    x: timeArray,
-    y: positionArray,
-    mode: "lines",
-    type: "scatter",
-    name: "Position"
-}, {
-    x: timeArray,
-    y: targetArray,
-    mode: "lines",
-    type: "scatter",
-    name: "Target Position"
-}];
 
 const layout = {
     xaxis: {range: [0, 10], title: "Time (s)"},
     yaxis: {range: [0, 40], title: "Position (m)"},
     title: "Position vs Time"
 };
-
 
 //visualizer();
 Plotly.newPlot("chart", [{
