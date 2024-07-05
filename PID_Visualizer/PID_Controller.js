@@ -4,7 +4,7 @@ class pidController {
         this.kp = kp;
         this.ki = ki;
         this.kd = kd;
-        this.dt = 0.001;
+        this.dt = 0.00001;
         this.min = -12;
         this.max = 12;
         this.previous_error = 0
@@ -28,6 +28,7 @@ class pidController {
 
         let output = proportional_out + integral_out + derivative_out;
 
+        // Operating v : 4.5v - 12v
         if (output > this.max){
             output = this.max
         }
@@ -43,15 +44,20 @@ class pidController {
 
 class robot {
     constructor (){
-            this.target_pos = 30.0;
+            // uses Banebots RS-540 motor
+            this.target_pos = 10.0;
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
-            this.max_velocity = 12.0;
+            this.max_velocity = 5.0;
             this.previous_velocity = 0.0;
             this.robot_weight = 50.0;
+            this.gravity = 9.81;
             this.previous_time = 0.0;
             this.time = 0.0;
+            this.speed_constant = 1400.0;
+            this.torque_constant = 0.0066;
+            this.resistance = 0.5;
     }
 
     reset(){
@@ -80,11 +86,11 @@ class robot {
         return seconds;
     }
 
-    get_velocity(power){
+    get_velocity(voltage){
 
         let wheel_circumference = this.wheel_diameter * 3.14;
 
-        let motor_rpm = power * 15;
+        let motor_rpm = voltage * this.speed_constant;
 
         let rotations_per_second = motor_rpm / 60;
 
@@ -100,42 +106,34 @@ class robot {
         return velocity;
     }
 
-    get_acceleration(current_velocity){
-        let time = this.get_time_seconds();
-        
-        let acceleration = (current_velocity - this.previous_velocity)/(time - this.previous_time || 1);
-        this.previous_time = time;
-        this.previous_velocity = current_velocity;
+    calculate_current(voltage){
+        let current = voltage / this.resistance;
+        console.log("current" + current);
+        return current;
+    }
+    calculate_torque(voltage){
+        let torque = this.torque_constant * this.calculate_current(voltage);
+        console.log("torque" + torque);
+        return torque;
+    }
 
+    calculate_acceleration(voltage){
+        let applied_force = this.calculate_torque(voltage) / (this.wheel_diameter / 2);
+        let friction_force = -1 * this.wheel_friction * this.robot_weight * this.gravity;
+        if (applied_force < 0){
+            friction_force *= -1;
+        }
+        let net_force = applied_force - friction_force;
+
+        let acceleration = net_force / this.robot_weight;
         console.log("acceleration" + acceleration);
         return acceleration;
     }
 
-    calculate_acceleration_after_friction(acceleration){
-        let applied_force = this.robot_weight * acceleration;
-        let friction_force = (this.wheel_friction * this.robot_weight * 9.18);
-        if (applied_force > 0){
-            friction_force = -1 * friction_force;
-        }
-        
-        let new_acceleration = (applied_force + friction_force) / this.robot_weight;
-
-        if (new_acceleration > 3){
-            new_acceleration = 3;
-        }
-        else if (new_acceleration < -3){
-            new_acceleration = -3;
-        }
-
-        console.log("after friction acceleration" + new_acceleration);
-        return new_acceleration
-    }
-
     get_distance_travelled(velocity, acceleration){
-        let time = this.get_time_seconds();
-        //let time_diff = time - this.previous_time;
-        let distance = (velocity * time) + 0.5 * acceleration * (time * time);
-    
+        let time_diff = this.get_time_seconds() - this.previous_time;
+        let distance = (velocity * time_diff) + 0.5 * acceleration * (time_diff * time_diff);
+        console.log("distance travelled: " + distance);
         this.current_pos += distance ;
         let total_distance = this.current_pos;  
     
@@ -146,22 +144,18 @@ class robot {
 }
 
 function visualizer (){
-    //10000
     while (robotObject.time < 10000){
-        let power = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
-        let velocity = robotObject.get_velocity(power);
-        let acceleration = robotObject.get_acceleration(velocity);
-        let final_acceleration = robotObject.calculate_acceleration_after_friction(acceleration);
-    
-        position = robotObject.get_distance_travelled(velocity, final_acceleration);   
+        robotObject.increase_time();
+        let voltage = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
+        let velocity = robotObject.get_velocity(voltage);
+        let acceleration = robotObject.calculate_acceleration(voltage);
+        position = robotObject.get_distance_travelled(velocity, acceleration);   
     
         positionArray.push(position);
         timeArray.push(robotObject.get_time_seconds());
         targetArray.push(robotObject.get_tar_pos());
- 
-        robotObject.increase_time();
     }
-        //visualizer();
+
     Plotly.newPlot("chart", [{
         x: timeArray,
         y: positionArray,
@@ -221,7 +215,7 @@ targetArray.push(robotObject.get_tar_pos());
 
 const layout = {
     xaxis: {range: [0, 10], title: "Time (s)"},
-    yaxis: {range: [0, 40], title: "Position (m)"},
+    yaxis: {range: [0, 20], title: "Position (m)"},
     title: "Position vs Time"
 };
 
