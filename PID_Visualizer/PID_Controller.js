@@ -45,7 +45,7 @@ class pidController {
 class robot {
     constructor (){
             // uses Banebots RS-540 motor
-            this.target_pos = 10.0;
+            this.target_pos = 30.0;
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
@@ -94,7 +94,8 @@ class robot {
 
         let rotations_per_second = motor_rpm / 60;
 
-        let velocity = rotations_per_second * wheel_circumference;
+        let velocity = (rotations_per_second * wheel_circumference) / 1000;
+
 
         if (velocity > this.max_velocity){
             velocity = this.max_velocity;
@@ -125,7 +126,7 @@ class robot {
         }
         let net_force = applied_force - friction_force;
 
-        let acceleration = net_force / this.robot_weight;
+        let acceleration = (net_force / this.robot_weight) / 1000000;
         console.log("acceleration" + acceleration);
         return acceleration;
     }
@@ -215,7 +216,7 @@ targetArray.push(robotObject.get_tar_pos());
 
 const layout = {
     xaxis: {range: [0, 10], title: "Time (s)"},
-    yaxis: {range: [0, 20], title: "Position (m)"},
+    yaxis: {range: [0, 40], title: "Position (m)"},
     title: "Position vs Time"
 };
 
