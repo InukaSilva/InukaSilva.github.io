@@ -29,12 +29,32 @@ class pidController {
         let output = proportional_out + integral_out + derivative_out;
 
         // Operating v : 4.5v - 12v
-        if (output > this.max){
-            output = this.max
+        if (output > 0){
+            if (output > 12){
+                output = 12;
+            }
+            else if (output < 4.5)  {
+                output = 4.5;
+            }
         }
-        else if (output < this.min)  {
-            output = this.min
+        else if (output < 0){
+            if (output < -12){
+                output = -12;
+            }
+            else if (output > -4.5)  {
+                output = -4.5;
+            }
         }
+        else{
+            output = 0.0;
+        }
+        // // Operating v : 4.5v - 12v
+        // if (output > this.max){
+        //     output = this.max
+        // }
+        // else if (output < this.min)  {
+        //     output = this.min
+        // }
 
         this.previous_error = error
         console.log("Output:" + output);
@@ -49,7 +69,7 @@ class robot {
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
-            this.max_velocity = 5.0;
+            this.max_velocity = 0.005;
             this.previous_velocity = 0.0;
             this.robot_weight = 50.0;
             this.gravity = 9.81;
@@ -127,6 +147,13 @@ class robot {
         let net_force = applied_force - friction_force;
 
         let acceleration = (net_force / this.robot_weight) / 1000000;
+
+        if (acceleration > 3){
+            acceleration = 3;
+        }
+        else if (acceleration < -3){
+            acceleration = -3;
+        }
         console.log("acceleration" + acceleration);
         return acceleration;
     }
