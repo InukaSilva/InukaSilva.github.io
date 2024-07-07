@@ -34,7 +34,7 @@ class pidController {
                 output = 12;
             }
             else if (output < 4.5)  {
-                output = 4.5;
+                output = 0.0;
             }
         }
         else if (output < 0){
@@ -42,12 +42,13 @@ class pidController {
                 output = -12;
             }
             else if (output > -4.5)  {
-                output = -4.5;
+                output = 0.0;
             }
         }
         else{
             output = 0.0;
         }
+
         // // Operating v : 4.5v - 12v
         // if (output > this.max){
         //     output = this.max
@@ -65,7 +66,7 @@ class pidController {
 class robot {
     constructor (){
             // uses Banebots RS-540 motor
-            this.target_pos = 30.0;
+            this.target_pos = 10.0;
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
@@ -73,7 +74,6 @@ class robot {
             this.previous_velocity = 0.0;
             this.robot_weight = 50.0;
             this.gravity = 9.81;
-            this.previous_time = 0.0;
             this.time = 0.0;
             this.speed_constant = 1400.0;
             this.torque_constant = 0.0066;
@@ -117,12 +117,12 @@ class robot {
         let velocity = (rotations_per_second * wheel_circumference) / 1000;
 
 
-        if (velocity > this.max_velocity){
-            velocity = this.max_velocity;
-        }
-        else if (velocity < -this.max_velocity){
-            velocity = -this.max_velocity;
-        }
+        // if (velocity > this.max_velocity){
+        //     velocity = this.max_velocity;
+        // }
+        // else if (velocity < -this.max_velocity){
+        //     velocity = -this.max_velocity;
+        // }
         console.log("velocity" + velocity);
         return velocity;
     }
@@ -148,21 +148,23 @@ class robot {
 
         let acceleration = (net_force / this.robot_weight) / 1000000;
 
-        if (acceleration > 3){
-            acceleration = 3;
-        }
-        else if (acceleration < -3){
-            acceleration = -3;
-        }
+        // if (acceleration > 3){
+        //     acceleration = 3;
+        // }
+        // else if (acceleration < -3){
+        //     acceleration = -3;
+        // }
         console.log("acceleration" + acceleration);
         return acceleration;
     }
 
     get_distance_travelled(velocity, acceleration){
-        let time_diff = this.get_time_seconds() - this.previous_time;
+        let time_diff = this.get_time_seconds() - 0.001;
+        console.log("time_Diff: " + time_diff);
         let distance = (velocity * time_diff) + 0.5 * acceleration * (time_diff * time_diff);
         console.log("distance travelled: " + distance);
         this.current_pos += distance ;
+        this.previous_time = this.time;
         let total_distance = this.current_pos;  
     
         console.log("total distance: " + total_distance);
@@ -264,7 +266,7 @@ targetArray.push(robotObject.get_tar_pos());
 
 const layout = {
     xaxis: {range: [0, 10], title: "Time (s)"},
-    yaxis: {range: [0, 40], title: "Position (m)"},
+    yaxis: {range: [0, 20], title: "Position (m)"},
     title: "Position vs Time"
 };
 
