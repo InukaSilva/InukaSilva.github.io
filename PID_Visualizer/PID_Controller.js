@@ -78,6 +78,7 @@ class robot {
             this.speed_constant = 1400.0;
             this.torque_constant = 0.0066;
             this.resistance = 0.5;
+            this.previous_time = 0.0;
     }
 
     reset(){
@@ -104,6 +105,16 @@ class robot {
         let current_time = this.time;
         let seconds = current_time /1000;
         return seconds;
+    }
+
+    set_previous_time(){
+        if (this.previous_time == 0){
+            this.previous_time = 0.0;
+        }
+        else {
+            this.previous_time = this.time / 1000;
+        }
+        return this.previous_time;
     }
 
     get_velocity(voltage){
@@ -159,9 +170,9 @@ class robot {
     }
 
     get_distance_travelled(velocity, acceleration){
-        let time_diff = this.get_time_seconds() - 0.001;
+        let time_diff = this.get_time_seconds() - this.previous_time;
         console.log("time_Diff: " + time_diff);
-        let distance = (velocity * time_diff) + 0.5 * acceleration * (time_diff * time_diff);
+        let distance = (velocity * 1) + 0.5 * acceleration * (1 * 1);
         console.log("distance travelled: " + distance);
         this.current_pos += distance ;
         this.previous_time = this.time;
@@ -175,6 +186,7 @@ class robot {
 
 function visualizer (){
     while (robotObject.time < 10000){
+        robotObject.set_previous_time();
         robotObject.increase_time();
         let voltage = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
         let velocity = robotObject.get_velocity(voltage);
