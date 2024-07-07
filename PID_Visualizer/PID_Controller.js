@@ -4,7 +4,7 @@ class pidController {
         this.kp = kp;
         this.ki = ki;
         this.kd = kd;
-        this.dt = 0.00001;
+        this.dt = 0.001;
         this.min = -12;
         this.max = 12;
         this.previous_error = 0
@@ -187,11 +187,20 @@ function visualizer (){
     Plotly.newPlot("chart", [{
         x: timeArray,
         y: positionArray,
+        mode: "lines",
+        line: {
+            shape: 'spline',
+            width: 2
+        },
         type: "scatter",
         name: "Position"
     }, {
         x: timeArray,
         y: targetArray,
+        mode: "lines",
+        line: {
+            width: 1
+        },
         type: "scatter",
         name: "Target Position"
     }], layout);
@@ -200,6 +209,7 @@ function visualizer (){
     console.log("Time Array: ", timeArray);
     console.log("Position Array: ", positionArray);
     console.log("Target Array: ", targetArray);
+
 }
 
 function run(){
@@ -209,15 +219,26 @@ function run(){
     position = 0.0; 
 
     if (!isNaN(kp) && !isNaN(ki) && !isNaN(kd)){
-        controllerObject = new pidController(kp, ki, kd);
-        controllerObject.reset();
-        robotObject.reset();
-        
-        timeArray = [];
-        positionArray = [];
-        targetArray = [];
+        Plotly.react("chart", [], layout);
+        document.getElementById("dot").style.backgroundColor = "#ff9d9d"; // Change to red
 
-        visualizer();
+       
+        setTimeout(() => {
+            controllerObject = new pidController(kp, ki, kd);
+            controllerObject.reset();
+            robotObject.reset();
+            
+            timeArray = [];
+            positionArray = [];
+            targetArray = [];
+
+            visualizer();
+            setTimeout(() => {
+                document.getElementById("dot").style.backgroundColor = "#b9fcc8"; // Change to green
+            }, 500); 
+            
+        }, 100); 
+       
     }
     else{
         kp = 0.0;
@@ -247,17 +268,24 @@ const layout = {
     title: "Position vs Time"
 };
 
-//visualizer();
+
 Plotly.newPlot("chart", [{
     x: timeArray,
     y: positionArray,
     mode: "lines",
+    line: {
+        shape: 'spline',
+        width: 2
+    },
     type: "scatter",
     name: "Position"
 }, {
     x: timeArray,
     y: targetArray,
     mode: "lines",
+    line: {
+        width: 1
+    },
     type: "scatter",
     name: "Target Position"
 }], layout);

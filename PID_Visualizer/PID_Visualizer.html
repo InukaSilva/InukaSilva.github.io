@@ -3,22 +3,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="plotly.min.js" charset="utf-8"></script>
+     
     <title>PID Visualizer</title>
     <link rel="stylesheet" href="PID_Visualizer.css">
 </head>
-
     <body>
         <div id="chart"></div>
-        <script src="PID_Controller.js"></script>   
-
+        <script src="PID_Controller.js"></script>  
+        <span class="dot" id="dot"></span> 
         <form name="gainValues">
-            <label for="kpText">Kp:</label><br>
-            <input type="text" id="kp" name="kp"><br>
-            <label for="kiText">Ki:</label><br>
-            <input type="text" id="ki" name="ki"><br>
-            <label for="kdText">Kd:</label><br>
-            <input type="text" id="kd" name="kd"><br>
+            <label for="kpText">Kp:</label>
+            <input type="text" id="kp" name="kp">
+            <label for="kiText">Ki:</label>
+            <input type="text" id="ki" name="ki">
+            <label for="kdText">Kd:</label>
+            <input type="text" id="kd" name="kd">
+            <button type="button" id="runButton" onclick="run()" >Run</button>
         </form>
-        <button type="button" id="runButton" onclick="run()" >Run</button><br>
+
     </body>
 </html>
