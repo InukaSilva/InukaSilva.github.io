@@ -29,33 +29,32 @@ class pidController {
         let output = proportional_out + integral_out + derivative_out;
 
         // Operating v : 4.5v - 12v
-        if (output > 0){
-            if (output > 12){
-                output = 12;
-            }
-            else if (output < 4.5)  {
-                output = 0.0;
-            }
-        }
-        else if (output < 0){
-            if (output < -12){
-                output = -12;
-            }
-            else if (output > -4.5)  {
-                output = 0.0;
-            }
-        }
-        else{
-            output = 0.0;
-        }
+        // if (output > 0){
+        //     if (output > 12){
+        //         output = 12;
+        //     }
+        //     else if (output < 4.5)  {
+        //         output = 0.0;
+        //     }
+        // }
+        // else if (output < 0){
+        //     if (output < -12){
+        //         output = -12;
+        //     }
+        //     else if (output > -4.5)  {
+        //         output = 0.0;
+        //     }
+        // }
+        // else{
+        //     output = 0.0;
+        // }
 
-        // // Operating v : 4.5v - 12v
-        // if (output > this.max){
-        //     output = this.max
-        // }
-        // else if (output < this.min)  {
-        //     output = this.min
-        // }
+        if (output > this.max){
+            output = this.max
+        }
+        else if (output < this.min)  {
+            output = this.min
+        }
 
         this.previous_error = error
         console.log("Output:" + output);
@@ -66,18 +65,17 @@ class pidController {
 class robot {
     constructor (){
             // uses Banebots RS-540 motor
-            this.target_pos = 10.0;
+            this.target_pos = 5.0;
             this.current_pos = 0.0;
             this.wheel_diameter = 0.1524;
             this.wheel_friction = 0.95;
-            this.max_velocity = 0.005;
             this.previous_velocity = 0.0;
             this.robot_weight = 50.0;
             this.gravity = 9.81;
             this.time = 0.0;
             this.speed_constant = 1400.0;
             this.torque_constant = 0.0066;
-            this.resistance = 0.5;
+            this.resistance = 0.015;
             this.previous_time = 0.0;
     }
 
@@ -127,13 +125,6 @@ class robot {
 
         let velocity = (rotations_per_second * wheel_circumference) / 1000;
 
-
-        // if (velocity > this.max_velocity){
-        //     velocity = this.max_velocity;
-        // }
-        // else if (velocity < -this.max_velocity){
-        //     velocity = -this.max_velocity;
-        // }
         console.log("velocity" + velocity);
         return velocity;
     }
@@ -159,12 +150,6 @@ class robot {
 
         let acceleration = (net_force / this.robot_weight) / 1000000;
 
-        // if (acceleration > 3){
-        //     acceleration = 3;
-        // }
-        // else if (acceleration < -3){
-        //     acceleration = -3;
-        // }
         console.log("acceleration" + acceleration);
         return acceleration;
     }
@@ -185,7 +170,7 @@ class robot {
 }
 
 function visualizer (){
-    while (robotObject.time < 10000){
+    while (robotObject.time < 5000){
         robotObject.set_previous_time();
         robotObject.increase_time();
         let voltage = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
@@ -277,8 +262,8 @@ timeArray.push(0.0);
 targetArray.push(robotObject.get_tar_pos());
 
 const layout = {
-    xaxis: {range: [0, 10], title: "Time (s)"},
-    yaxis: {range: [0, 20], title: "Position (m)"},
+    xaxis: {range: [0, 5], title: "Time (s)"},
+    yaxis: {range: [0, 10], title: "Position (m)"},
     title: "Position vs Time"
 };
 
