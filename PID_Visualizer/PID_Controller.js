@@ -28,27 +28,6 @@ class pidController {
 
         let output = proportional_out + integral_out + derivative_out;
 
-        // Operating v : 4.5v - 12v
-        // if (output > 0){
-        //     if (output > 12){
-        //         output = 12;
-        //     }
-        //     else if (output < 4.5)  {
-        //         output = 0.0;
-        //     }
-        // }
-        // else if (output < 0){
-        //     if (output < -12){
-        //         output = -12;
-        //     }
-        //     else if (output > -4.5)  {
-        //         output = 0.0;
-        //     }
-        // }
-        // else{
-        //     output = 0.0;
-        // }
-
         if (output > this.max){
             output = this.max
         }
@@ -77,6 +56,7 @@ class robot {
             this.torque_constant = 0.0066;
             this.resistance = 0.015;
             this.previous_time = 0.0;
+
     }
 
     reset(){
@@ -84,6 +64,8 @@ class robot {
         this.previous_time = 0.0;
         this.current_pos = 0.0;
         this.previous_velocity = 0.0;
+
+        this.angular_velocity = 0.0;
     }
 
     get_tar_pos(){
@@ -134,6 +116,7 @@ class robot {
         console.log("current" + current);
         return current;
     }
+
     calculate_torque(voltage){
         let torque = this.torque_constant * this.calculate_current(voltage);
         console.log("torque" + torque);
@@ -151,16 +134,17 @@ class robot {
         let acceleration = (net_force / this.robot_weight) / 1000000;
 
         console.log("acceleration" + acceleration);
+        
         return acceleration;
     }
 
     get_distance_travelled(velocity, acceleration){
-        let time_diff = this.get_time_seconds() - this.previous_time;
-        console.log("time_Diff: " + time_diff);
         let distance = (velocity * 1) + 0.5 * acceleration * (1 * 1);
         console.log("distance travelled: " + distance);
+
         this.current_pos += distance ;
         this.previous_time = this.time;
+        this.previous_velocity = velocity;
         let total_distance = this.current_pos;  
     
         console.log("total distance: " + total_distance);
@@ -174,10 +158,13 @@ function visualizer (){
         robotObject.set_previous_time();
         robotObject.increase_time();
         let voltage = controllerObject.compute(robotObject.get_tar_pos(), robotObject.get_curr_pos());
+
         let velocity = robotObject.get_velocity(voltage);
+
         let acceleration = robotObject.calculate_acceleration(voltage);
-        position = robotObject.get_distance_travelled(velocity, acceleration);   
     
+        position = robotObject.get_distance_travelled(velocity, acceleration);
+ 
         positionArray.push(position);
         timeArray.push(robotObject.get_time_seconds());
         targetArray.push(robotObject.get_tar_pos());
