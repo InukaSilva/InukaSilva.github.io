@@ -3,7 +3,6 @@ import Button from "./components/button";
 import Navbar from "./components/navbar";
 import Icon from "./components/icon";
 import Section from "./components/links";
-import Card from "./components/project_card";
 
 
 export default function Home() {
