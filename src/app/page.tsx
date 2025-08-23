@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "./components/button";
 import Navbar from "./components/navbar";
-import Icon from "./components/icon";
+import Socials from "./components/socials";
 import Section from "./components/links";
 
 
@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <div> 
       <Navbar>
-        <Icon>
+        <Socials>
           <a href="https://github.com/InukaSilva"> 
             <Image src="/assets/Github.jpg" width={30} height={30} alt="Github"/>
           </a >
           <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244"> 
           <Image src="/assets/Linkedin.png" width={30} height={30} alt="Linkedin"/>
           </a>
-        </Icon>
+        </Socials>
         <Section>
           <Button>
           <a href="/Gallery">
