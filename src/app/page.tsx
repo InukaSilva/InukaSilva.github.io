@@ -47,7 +47,7 @@ export default function Home() {
       <div className="flex items-center justify-center flex-row flex-wrap m-4 gap-40">
         <div className="flex flex-col items-start">
           <a className="text-[1.6rem] text-[#4E3D31]">
-            Engineering @ McMaster University
+            Engineering 1 | Co-op @ McMaster University
           </a>
           <a className="text-[1.1rem] text-[#4E3D31]">
             Robotics - Embedded Systems - Space Exploration
