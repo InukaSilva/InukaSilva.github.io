@@ -34,7 +34,7 @@ export default function Home() {
               </a>
             </motion.button>
             <motion.button>
-              <a href="https://github.com/InukaSilva">
+              <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244">
                 GitHub: InukaSilva ↗
               </a>
             </motion.button>
