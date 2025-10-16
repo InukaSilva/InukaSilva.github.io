@@ -2,38 +2,95 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
 
-  const images = [
-    "/photos/photo1.jpg",
-    "/photos/photo2.jpg",
-    "/photos/photo3.jpg",
-    "/photos/photo4.jpg",
-  ];
-
   return (
-    <div className="flex flex-col items-center h-screen text-[#4E3D31] ">
-      <div className="flex justify-center h-1/10 w-screen">
-        <motion.button whileHover={{ scale: 1.1 }} onHoverStart={() => console.log('hover started!')}>
-            <a href="/"> 
-              <Image src="/assets/Home.png" width={50} height={50} alt="Github"/>
-            </a >
-        </motion.button>
-      </div>
-      <div className="flex flex-row flex-wrap w-8/10 p-1 gap-0.5 border-2">
-        {images.map((src, index) => (
-          <div key={index} className="relative h-40 w-40 overflow-hidden">
-            <Image
-              src={src}
-              alt={`Photo ${index + 1}`}
-              fill
-              className="object-cover"
-            />
+      <div className="flex w-screen h-screen flex-row">
+      {/*THis is the side bar */}
+      <div className="flex border-r flex-col min-w-75 h-full p-4">
+
+        <motion.div className="flex h-20 flex-row flex-wrap gap-2 justify-center items-center p-2">
+          <a href="https://github.com/InukaSilva"> 
+            <Image src="/assets/Github.jpg" width={30} height={30} alt="Github"/>
+          </a >
+          <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244"> 
+            <Image src="/assets/Linkedin.png" width={30} height={30} alt="Linkedin"/>
+          </a>
+          <a href="https://www.youtube.com/@Inuka_Silva"> 
+            <Image src="/assets/Youtube.png" width={35} height={35} alt="Youtube"/>
+          </a>
+          
+        </motion.div>
+        <motion.div className="flex flex-col h-full p-1 items-baseline gap-3 font-mono"> 
+          <p className="pt-5 font-bold">
+            Contant Info
+          </p>
+          <div className="flex flex-col items-baseline pl-4 gap-3">
+            <motion.button>
+              <a href="mailto:Inukasilva@outlook.com">
+                Inukasilva@outlook.com ↗
+              </a>
+            </motion.button>
+            <motion.button>
+              <a href="https://github.com/InukaSilva">
+                GitHub: InukaSilva ↗
+              </a>
+            </motion.button>
+            <motion.button>
+              <a href="https://github.com/InukaSilva">
+                LinkedIn: Inuka Silva ↗
+              </a>
+            </motion.button>
+             <motion.button>
+              <a href="https://inuka-silva.itch.io/">
+                Itch.io: Inuka Silva ↗
+              </a>
+            </motion.button>
           </div>
-        ))}
+          <p className="pt-5  font-bold">
+              Resources
+          </p>
+          <div className="flex flex-col items-baseline pl-4 gap-3">
+            <motion.button>
+              <a href="/assets/resume.pdf" rel="noopener noreferrer">
+                Resume ↗
+              </a>
+            </motion.button>
+             <motion.button>
+            <a href="/Projects">
+              Projects ↗
+            </a>
+          </motion.button>
+          <motion.button>
+            <a href="https://inukasilva.github.io/Devlog/">
+              Devlog ↗
+            </a>
+          </motion.button>
+          <motion.button>
+            <a href="/Gallery">
+              Gallery ↗
+            </a>
+          </motion.button>
+          </div>
+          <p className="pt-5  font-bold">
+              Quick Links
+          </p>
+          <div className="flex flex-col items-baseline pl-4 gap-3">
+             <Link href="/">Home ↗</Link>
+          </div>
+
+         
+        </motion.div>
+      </div >
+      {/* This is the main section*/}
+      <div className="flex w-full h-full justify-center items-center">
+        <div className="flex flex-col max-w-200 p-4 gap-4 text-2xl font-mono">
+          <p>
+            This is still a work in progress
+          </p>
+        </div>
       </div>
-      <h1>So either your not suppose to be here or I haven't implimented this yet. But who could tell?</h1>
     </div>
   );
 }

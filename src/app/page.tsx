@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react"
+import Link from "next/link";
 
 export default function Home() {
 
@@ -76,6 +77,11 @@ export default function Home() {
           <p className="pt-5  font-bold">
               Quick Links
           </p>
+          <div className="flex flex-col items-baseline pl-4 gap-3">
+             <Link href="/">Home ↗</Link>
+          </div>
+
+         
         </motion.div>
       </div >
       {/* This is the main section*/}
