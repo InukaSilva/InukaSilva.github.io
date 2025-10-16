@@ -34,12 +34,12 @@ export default function Home() {
               </a>
             </motion.button>
             <motion.button>
-              <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244">
+              <a href="https://github.com/InukaSilva">
                 GitHub: InukaSilva ↗
               </a>
             </motion.button>
             <motion.button>
-              <a href="https://github.com/InukaSilva">
+              <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244">
                 LinkedIn: Inuka Silva ↗
               </a>
             </motion.button>
