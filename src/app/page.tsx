@@ -1,13 +1,6 @@
 "use client"
 
 import Image from "next/image";
-/*
-import Button from "./components/button";
-import Navbar from "./components/navbar";
-import Socials from "./components/socials";
-import Section from "./components/links";
-import Scene from "./components/scene";
-*/
 import { motion } from "motion/react"
 
 export default function Home() {

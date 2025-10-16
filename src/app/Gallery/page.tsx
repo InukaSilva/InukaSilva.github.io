@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "motion/react";
-import Socials from "../components/socials";
 import Image from "next/image";
 
 export default function Home() {

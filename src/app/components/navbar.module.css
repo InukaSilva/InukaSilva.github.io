@@ -1,9 +1,0 @@
-.container {
-
-    display: flex;                   /* REQUIRED */
-    flex-direction: row;             /* Default: row */
-    align-items: center;             /* Align items vertically */
-    justify-content: space-between; /* Spread items between left and right */
-  
-    margin: 1rem;
-}
