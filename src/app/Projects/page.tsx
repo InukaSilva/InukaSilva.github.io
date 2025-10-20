@@ -1,8 +1,10 @@
 "use client"
 
-import { motion } from "motion/react"
+import { AnimatePresence, motion } from "motion/react"
 import Link from "next/link";
 import Image from "next/image"
+import Card from "../components/card";
+
 
 export default function Home() {
 
@@ -85,11 +87,30 @@ export default function Home() {
         </motion.div>
       </div >
       {/* This is the main section*/}
-      <div className="flex w-full h-full justify-center items-center">
-        <div className="flex flex-col max-w-200 p-4 gap-4 text-2xl font-mono">
-          <p>
-            This is still a work in progress
-          </p>
+      <div className="flex flex-col w-full h-full justify-center items-center">
+        <div className="flex flex-col max-w-400 p-10 text-2xl h-full font-mono">
+          <div className="mb-10">
+            <p className="font-bold border-b-1">
+              Software Projects
+            </p>
+            <div className="flex flex-row flex-wrap justify-center max-w-400 p-4 gap-5">
+            
+              <Card image="/assets/projects/PlaceHolder.svg" language="Python" name="Spotify Gesture Controller" description="Provides media functions controlled via hand gestures"/>  
+              <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cyro" description="FRC 1305's robot for the 2024 season"/>
+              <Card image="/assets/projects/Vector.JPG" language="Java" name="Vector" description="FRC 1305's robot for the 2023 season"/>
+              <Card image="/assets/projects/Yeti.JPG" language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
+            
+            
+            </div>      
+          </div>
+          <div>
+            <p className="font-bold border-b-1">
+              Hardware Projects
+            </p>
+            <p className="text-lg">
+             Still working on these
+            </p>
+          </div>
         </div>
       </div>
     </div>
