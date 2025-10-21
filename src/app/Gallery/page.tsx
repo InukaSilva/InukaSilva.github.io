@@ -22,7 +22,7 @@ export default function Home() {
           </a>
           
         </motion.div>
-        <motion.div className="flex flex-col h-full p-1 items-baseline gap-3 font-mono"> 
+        <motion.div className="flex flex-col h-full p-1 items-baseline gap-3"> 
           <p className="pt-5 font-bold">
             Contant Info
           </p>
@@ -85,14 +85,24 @@ export default function Home() {
       </div >
       {/* This is the main section*/}
       <div className="flex w-full h-full justify-center items-center">
-        <div className="flex flex-col max-w-200 p-4 gap-4 text-2xl font-mono">
-          <p>
-            This is still a work in progress
-          </p>
-        </div>
+        <p>
+          This is still a work in progress Projects
+        </p>
       </div>
     </div>
   );
 }
 
-    
+/**
+ * 
+ * 
+ *         <div className="flex flex-col max-w-200 justify-center p-4 gap-4 text-2xl border">
+          <Image src="assets/photos/photo1.jpg" alt="Photo 1" width={0} height={0} layout="responsive" className="scale-0.5"></Image>
+          <p>
+            This is still a work in progress Projects
+          </p>
+          <p className="font-mono">
+            This is still a work in progress Projects
+          </p>
+        </div>
+ */

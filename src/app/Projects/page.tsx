@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, motion } from "motion/react"
+import {motion } from "motion/react"
 import Link from "next/link";
 import Image from "next/image"
 import Card from "../components/card";
@@ -25,7 +25,7 @@ export default function Home() {
           </a>
           
         </motion.div>
-        <motion.div className="flex flex-col h-full p-1 items-baseline gap-3 font-mono"> 
+        <motion.div className="flex flex-col h-full p-1 items-baseline gap-3"> 
           <p className="pt-5 font-bold">
             Contant Info
           </p>
@@ -88,15 +88,19 @@ export default function Home() {
       </div >
       {/* This is the main section*/}
       <div className="flex flex-col w-full h-full justify-center items-center">
-        <div className="flex flex-col max-w-400 p-10 text-2xl h-full font-mono">
+        <div className="flex flex-col max-w-400 p-4 text-2xl h-full">
           <div className="mb-10">
             <p className="font-bold border-b-1">
               Software Projects
             </p>
-            <div className="flex flex-row flex-wrap justify-center max-w-400 p-4 gap-5">
-            
-              <Card image="/assets/projects/PlaceHolder.svg" language="Python" name="Spotify Gesture Controller" description="Provides media functions controlled via hand gestures"/>  
-              <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cyro" description="FRC 1305's robot for the 2024 season"/>
+            <div className="flex flex-row flex-wrap items-center justify-center max-w-400 p-4 gap-5">
+              <a href="https://github.com/InukaSilva/Spotify_Gesture_Control">
+                <Card image="/assets/projects/PlaceHolder.svg" language="Python" name="Gesture Controller" description="Provides media functions controlled via hand gestures using webcam"/>
+              </a>
+              <a href="https://github.com/InukaSilva/PID-Visualizer">
+                <Card image="/assets/projects/PlaceHolder.svg" language="JavaScript" name="PID Visualizer" description="Graph visualizer showing the effects of a PID controller"/>
+              </a>
+               <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cyro" description="FRC 1305's robot for the 2024 season"/>
               <Card image="/assets/projects/Vector.JPG" language="Java" name="Vector" description="FRC 1305's robot for the 2023 season"/>
               <Card image="/assets/projects/Yeti.JPG" language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
             
