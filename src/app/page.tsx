@@ -88,8 +88,11 @@ export default function Home() {
       <div className="flex w-full h-full justify-center items-center">
         <div className="flex flex-col max-w-200 p-4 gap-4 text-2xl">
           <p className="font-bold">Welcome! My name is Inuka Silva.</p>
-          <p>I am currently a student studying engineering at McMaster University. I am Interested in Robotics, 
-            Space, and Control systems. I'm always looking for new opportunities to hone my skills and knowledge.
+          <p>I am currently a student studying engineering at McMaster University. I am interested in Robotics, 
+            Space, and Control Systems. I'm always looking for new opportunities to hone my skills and knowledge.
+          </p>
+          <p>
+            Currently looking for summer 2026 co-ops/internships and student research assitant positions :D
           </p>
           <a href="/assets/resume.pdf" rel="noopener noreferrer">
             Resume ↗

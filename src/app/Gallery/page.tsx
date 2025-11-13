@@ -1,5 +1,6 @@
 "use client"
 
+import { assert } from "console";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,9 +86,64 @@ export default function Home() {
       </div >
       {/* This is the main section*/}
       <div className="flex w-full h-full justify-center items-center">
-        <p>
-          This is still a work in progress Projects
-        </p>
+
+        <div className="flex flex-col max-w-400 m-auto justify-center items-center border">
+          <p>
+            This is still a work in progress Projects
+          </p>
+          <div className="flex flex-row max-w-400 p-4 items-center border">
+            <Image src={"/assets/photos/photo1.jpg"}  loading="lazy" width={300} height={300} alt="Photo 1"/>
+            <div className="flex flex-col p-4">
+              <p>
+                Camera:
+              </p>
+              <p>
+                Apature
+              </p>
+              <p>
+                Shutter Speed
+              </p>
+              <p>
+                ISO
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-row max-w-400 p-4 items-center border">
+            <Image src={"/assets/photos/photo2.jpg"}  loading="lazy" width={300} height={300} alt="Photo 1"/>
+            <div className="flex flex-col p-4">
+              <p>
+                Camera:
+              </p>
+              <p>
+                Apature
+              </p>
+              <p>
+                Shutter Speed
+              </p>
+              <p>
+                ISO
+              </p>
+            </div>
+          </div>
+                    <div className="flex flex-row max-w-400 p-4 items-center border">
+            <Image src={"/assets/photos/photo4.jpg"}  loading="lazy" width={300} height={300} alt="Photo 1"/>
+            <div className="flex flex-col p-4">
+              <p>
+                Camera:
+              </p>
+              <p>
+                Apature
+              </p>
+              <p>
+                Shutter Speed
+              </p>
+              <p>
+                ISO
+              </p>
+            </div>
+          </div>
+          
+        </div>
       </div>
     </div>
   );

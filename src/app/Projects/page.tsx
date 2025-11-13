@@ -100,7 +100,7 @@ export default function Home() {
               <a href="https://github.com/InukaSilva/PID-Visualizer">
                 <Card image="/assets/projects/PlaceHolder.svg" language="JavaScript" name="PID Visualizer" description="Graph visualizer showing the effects of a PID controller"/>
               </a>
-               <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cyro" description="FRC 1305's robot for the 2024 season"/>
+               <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cryo" description="FRC 1305's robot for the 2024 season"/>
               <Card image="/assets/projects/Vector.JPG" language="Java" name="Vector" description="FRC 1305's robot for the 2023 season"/>
               <Card image="/assets/projects/Yeti.JPG" language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
             
