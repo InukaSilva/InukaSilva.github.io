@@ -91,7 +91,20 @@ export default function Home() {
           <p>
             This is still a work in progress Projects
           </p>
-          <div className="flex flex-row max-w-400 p-4 items-center border">
+       
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * <div className="flex flex-row max-w-400 p-4 items-center border">
             <Image src={"/assets/photos/photo1.jpg"}  loading="lazy" width={300} height={300} alt="Photo 1"/>
             <div className="flex flex-col p-4">
               <p>
@@ -142,14 +155,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-          
-        </div>
-      </div>
-    </div>
-  );
-}
+   
 
-/**
+
+          
  * 
  * 
  *         <div className="flex flex-col max-w-200 justify-center p-4 gap-4 text-2xl border">
