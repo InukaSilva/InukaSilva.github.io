@@ -87,9 +87,9 @@ export default function Home() {
       {/* This is the main section*/}
       <div className="flex w-full h-full justify-center items-center">
 
-        <div className="flex flex-col max-w-400 m-auto justify-center items-center border">
+        <div className="flex flex-col max-w-400 m-auto justify-center items-center">
           <p>
-            This is still a work in progress Projects
+            This is still a work in progress
           </p>
        
         </div>
