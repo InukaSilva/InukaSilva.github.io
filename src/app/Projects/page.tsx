@@ -9,7 +9,7 @@ import Card from "../components/card";
 export default function Home() {
 
   return (
-        <div className="flex w-screen h-screen flex-row">
+    <div className="flex w-screen h-screen flex-row">
       {/*THis is the side bar */}
       <div className="flex border-r flex-col min-w-75 h-full p-4">
 
@@ -82,40 +82,23 @@ export default function Home() {
           <div className="flex flex-col items-baseline pl-4 gap-3">
              <Link href="/">Home ↗</Link>
           </div>
-
-         
         </motion.div>
       </div >
       {/* This is the main section*/}
-      <div className="flex flex-col w-full h-full justify-center items-center">
-        <div className="flex flex-col max-w-400 p-4 text-2xl h-full">
-          <div className="mb-10">
-            <p className="font-bold border-b-1">
-              Software Projects
-            </p>
-            <div className="flex flex-row flex-wrap items-center justify-center max-w-400 p-4 gap-5">
+      <div className="w-full h-full items-center p-4">            
+        <div className="flex flex-row flex-wrap items-center justify-center max-w-400 gap-1">
               <a href="https://github.com/InukaSilva/Spotify_Gesture_Control">
-                <Card image="/assets/projects/PlaceHolder.svg" language="Python" name="Gesture Controller" description="Provides media functions controlled via hand gestures using webcam"/>
+                <Card language="Python" name="Spotifty Gesture Controller ↗" description="Provides media functions controlls via hand gestures"/>
               </a>
               <a href="https://github.com/InukaSilva/PID-Visualizer">
-                <Card image="/assets/projects/PlaceHolder.svg" language="JavaScript" name="PID Visualizer" description="Graph visualizer showing the effects of a PID controller"/>
+                <Card language="JavaScript" name="PID Visualizer ↗" description="Graph visualizer showing the effects of a PID controller"/>
               </a>
-               <Card image="/assets/projects/Cyro.JPG" language="Java" name="Cryo" description="FRC 1305's robot for the 2024 season"/>
-              <Card image="/assets/projects/Vector.JPG" language="Java" name="Vector" description="FRC 1305's robot for the 2023 season"/>
-              <Card image="/assets/projects/Yeti.JPG" language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
-            
-            
-            </div>      
-          </div>
-          <div>
-            <p className="font-bold border-b-1">
-              Hardware Projects
-            </p>
-            <p className="text-lg">
-             Still working on these
-            </p>
-          </div>
-        </div>
+               <Card language="Java" name="Cryo" description="FRC 1305's robot for the 2024 season"/>
+              <a href="/assets/vector.pdf" rel="noopener noreferrer">
+                <Card language="Java" name="Vector ↗" description="FRC 1305's robot for the 2023 season"/>
+              </a>
+              <Card language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
+        </div>      
       </div>
     </div>
   );

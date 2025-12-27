@@ -1,9 +1,10 @@
 "use client"
 
-import { assert } from "console";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+
+
 export default function Home() {
 
   return (
@@ -86,12 +87,10 @@ export default function Home() {
       </div >
       {/* This is the main section*/}
       <div className="flex w-full h-full justify-center items-center">
-
         <div className="flex flex-col max-w-400 m-auto justify-center items-center">
           <p>
             This is still a work in progress
-          </p>
-       
+          </p>       
         </div>
       </div>
     </div>
