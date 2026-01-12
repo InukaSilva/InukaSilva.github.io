@@ -15,7 +15,7 @@ export default function Home() {
           <a href="https://github.com/InukaSilva"> 
             <Image src="/assets/Github.jpg" width={30} height={30} alt="Github"/>
           </a >
-          <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244"> 
+          <a href="https://www.linkedin.com/in/inukasilva/"> 
             <Image src="/assets/Linkedin.png" width={30} height={30} alt="Linkedin"/>
           </a>
           <a href="https://www.youtube.com/@Inuka_Silva"> 

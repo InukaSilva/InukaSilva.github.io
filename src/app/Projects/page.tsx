@@ -41,7 +41,7 @@ export default function Home() {
               </a>
             </motion.button>
             <motion.button>
-              <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244">
+              <a href="https://www.linkedin.com/in/inukasilva/">
                 LinkedIn: Inuka Silva ↗
               </a>
             </motion.button>
