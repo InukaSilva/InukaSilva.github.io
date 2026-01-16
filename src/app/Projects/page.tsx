@@ -75,6 +75,11 @@ export default function Home() {
               Gallery ↗
             </a>
           </motion.button>
+          <motion.button>
+            <a href="/BucketList">
+              BucketList ↗
+            </a>
+          </motion.button>
           </div>
           <p className="pt-5  font-bold">
               Quick Links

@@ -94,7 +94,7 @@ export default function Home() {
       <div className="flex w-full h-full justify-center items-center">
         <div className="flex flex-col max-w-400 m-auto justify-center items-center">
           <p>
-            This is still a work in progress :\
+            Building my bucketlist... check back in a bit :D
           </p>       
         </div>
       </div>

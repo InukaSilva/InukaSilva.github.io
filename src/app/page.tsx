@@ -73,6 +73,11 @@ export default function Home() {
               Gallery ↗
             </a>
           </motion.button>
+          <motion.button>
+            <a href="/BucketList">
+              BucketList ↗
+            </a>
+          </motion.button>
           </div>
           <p className="pt-5  font-bold">
               Quick Links
@@ -88,11 +93,11 @@ export default function Home() {
       <div className="flex w-full h-full justify-center items-center">
         <div className="flex flex-col max-w-200 p-4 gap-4 text-2xl">
           <p className="font-bold">Welcome! My name is Inuka Silva.</p>
-          <p>I am currently a student studying engineering at McMaster University. I am interested in Robotics, 
+          <p>I am Bucket List a student studying engineering at McMaster University. I am interested in Robotics, 
             Space, and Control Systems.
           </p>
           <p>
-            Currently looking for summer 2026 co-ops/internships and URA positions :D
+            Bucket List looking for summer 2026 co-ops/internships and URA positions :D
           </p>
           <a href="/assets/resume.pdf" rel="noopener noreferrer">
             Resume ↗
