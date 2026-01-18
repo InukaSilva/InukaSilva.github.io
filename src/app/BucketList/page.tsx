@@ -26,7 +26,7 @@ export default function Home() {
         </motion.div>
         <motion.div className="flex flex-col h-full p-1 items-baseline gap-3"> 
           <p className="pt-5 font-bold">
-            Contant Info
+            Contact Info
           </p>
           <div className="flex flex-col items-baseline pl-4 gap-3">
             <motion.button>
