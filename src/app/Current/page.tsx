@@ -15,14 +15,15 @@ export default function Home() {
               ←
             </Link>
         </div>
-        <div className="font-semibold p-4 pb-1">
-          Things I am currently trying to learn or build for 2026.
+        <div className="text-center font-semibold p-4 pb-1">
+          Things I am currently learnoing or building for 2026.
         </div>
-        <div className="p-4 pt-0">
+        <div className="text-center p-4 pt-0">
           If you have any resources that may be helpful to my learning, I would appreciate the guidance :D
         </div>
-        <div className="flex flex-col border-t  items-start w-full p-5 gap-5">
-          <div className="flex">
+        <div className="flex flex-col border-t justify-center items-center p-5 gap-5 h-screen">
+          <div className="flex flex-col items-start flex-start">
+          <div>
             [] Learn C and C++
           </div>
           <div>
@@ -35,7 +36,7 @@ export default function Home() {
             [] Robotics project (literally anything)
           </div>
         </div>
-        <div className="flex flex-grow justify-center items-end h-screen">
+        <div className="flex justify-center items-end h-full">
             <pre className="font-mono text-xl text-center">
               /\_/\<br></br>
               ( o.o )
@@ -43,6 +44,7 @@ export default function Home() {
         </div>
 
 
+        </div>
       </div>
     </div>
   );
