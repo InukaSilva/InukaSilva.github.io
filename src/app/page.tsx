@@ -48,6 +48,11 @@ export default function Home() {
                 Itch.io: Inuka Silva ↗
               </a>
             </motion.button>
+            <motion.button>
+              <a href="https://devpost.com/InukaSilva?">
+                DevPost: InukaSilva ↗
+              </a>
+            </motion.button>
           </div>
           <p className="pt-5  font-bold">
               Resources
@@ -74,8 +79,8 @@ export default function Home() {
             </a>
           </motion.button>
           <motion.button>
-            <a href="/BucketList">
-              BucketList ↗
+            <a href="/Current">
+              Current ↗
             </a>
           </motion.button>
           </div>

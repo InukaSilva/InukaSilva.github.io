@@ -50,6 +50,11 @@ export default function Home() {
                 Itch.io: Inuka Silva ↗
               </a>
             </motion.button>
+            <motion.button>
+              <a href="https://devpost.com/InukaSilva?">
+                DevPost: InukaSilva ↗
+              </a>
+            </motion.button>
           </div>
           <p className="pt-5  font-bold">
               Resources
@@ -76,8 +81,8 @@ export default function Home() {
             </a>
           </motion.button>
           <motion.button>
-            <a href="/BucketList">
-              BucketList ↗
+            <a href="/Current">
+              Current ↗
             </a>
           </motion.button>
           </div>
@@ -91,18 +96,58 @@ export default function Home() {
       </div >
       {/* This is the main section*/}
       <div className="w-full h-full items-center p-4">            
-        <div className="flex flex-row flex-wrap items-center justify-center max-w-400 gap-1">
-              <a href="https://github.com/InukaSilva/Spotify_Gesture_Control">
-                <Card language="Python" name="Spotifty Gesture Controller ↗" description="Provides media functions controlls via hand gestures"/>
+        <div className="flex flex-col flex-wrap items-center justify-center w-full gap-1">
+          <div className="font-semibold border-b">
+            Software
+          </div>
+          <div className="flex flex-row flex-wrap items-center justify-center w-full gap-1 p-4">
+              <a href="https://github.com/InukaSilva/Spotify_Gesture_Control" className="flex flex-col p-5">
+                <div className="font-semibold">
+                  Spotify Gesture Controller ↗
+                </div>
+                <div>
+                  Provides media functions controlls via hand gestures
+                </div>
               </a>
-              <a href="https://github.com/InukaSilva/PID-Visualizer">
-                <Card language="JavaScript" name="PID Visualizer ↗" description="Graph visualizer showing the effects of a PID controller"/>
+              <a href="https://github.com/InukaSilva/PID-Visualizer" className="flex flex-col p-5">
+                <div className="font-semibold">
+                  PID Visualizer ↗
+                </div>
+                <div>
+                  Graph visualizer showing the effects of a PID controller
+                </div>
               </a>
-               <Card language="Java" name="Cryo" description="FRC 1305's robot for the 2024 season"/>
-              <a href="/assets/vector.pdf" rel="noopener noreferrer">
-                <Card language="Java" name="Vector ↗" description="FRC 1305's robot for the 2023 season"/>
-              </a>
-              <Card language="Java" name="Yeti" description="FRC 1305's robot for the 2022 season"/>
+          </div>
+
+          <div className="font-semibold border-b">
+            Robotics
+          </div>
+          <div className="flex flex-row flex-wrap items-center justify-center w-full gap-1 p-4">
+            <a className="flex flex-col p-5">
+              <div className="font-semibold">
+                  Cryo
+                </div>
+                <div>
+                  FRC 1305's robot for the 2024 season
+              </div>
+            </a>
+            <a href="/assets/vector.pdf" className="flex flex-col p-5">
+              <div className="font-semibold">
+                  Vector ↗
+                </div>
+                <div>
+                  FRC 1305's robot for the 2023 season
+              </div>
+            </a>
+            <a className="flex flex-col p-5">
+              <div className="font-semibold">
+                  Yeti
+                </div>
+                <div>
+                  FRC 1305's robot for the 2022 season
+              </div>
+            </a>
+          </div>
         </div>      
       </div>
     </div>
