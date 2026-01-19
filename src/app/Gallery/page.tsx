@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col h-screen justify-center items-center text-center">
           <p className="font-semibold">
-            Still working on this section :L
+            Still working on this section :P
           </p>
           <p>
             Please check again when I stop procrastinating on this.
