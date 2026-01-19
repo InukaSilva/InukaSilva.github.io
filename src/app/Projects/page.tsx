@@ -60,25 +60,21 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-col justify-end h-full">
-                      <div className="border-b p-3">
-            View other projects:
+            <div className="border-b p-3">
+              View other projects:
+            </div>
+            <div className="flex flex-row gap-5 p-3">
+              <a href="https://github.com/InukaSilva">
+                  GitHub ↗
+              </a>
+              <a href="https://inuka-silva.itch.io/">
+                  Itch.io ↗
+              </a>
+              <a href="https://devpost.com/InukaSilva?">
+                  DevPost ↗
+              </a>
+            </div>
           </div>
-          <div className="flex flex-row gap-5 p-3">
-            <a href="https://github.com/InukaSilva">
-                GitHub ↗
-            </a>
-            <a href="https://inuka-silva.itch.io/">
-                Itch.io ↗
-            </a>
-            <a href="https://devpost.com/InukaSilva?">
-                DevPost ↗
-            </a>
-          </div>
-
-          </div>
-
-
-
         </div>
       </div>
     </div>
