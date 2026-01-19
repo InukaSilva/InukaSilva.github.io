@@ -35,7 +35,7 @@ export default function Home() {
             [] Robotics project (literally anything)
           </div>
         </div>
-        <div className="flex flex-grow justify-center items-end h-screen jus">
+        <div className="flex flex-grow justify-center items-end h-screen">
             <pre className="font-mono text-xl text-center">
               /\_/\<br></br>
               ( o.o )
