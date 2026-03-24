@@ -73,6 +73,9 @@ export default function Home() {
               <a href="https://devpost.com/InukaSilva?">
                   DevPost ↗
               </a>
+              <a href="https://maple-soybean-8d1.notion.site/Inuka-Silva-2d537ada6f4481779e6de8f5b947e360">
+                  Course Work ↗
+              </a>
             </div>
           </div>
         </div>

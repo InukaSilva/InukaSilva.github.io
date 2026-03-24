@@ -16,7 +16,7 @@ export default function Home() {
             </Link>
         </div>
         <div className="text-center font-semibold p-4 pb-1">
-          Things I am currently learnoing or building for 2026.
+          Things I am currently learning or building for 2026.
         </div>
         <div className="text-center p-4 pt-0">
           If you have any resources that may be helpful to my learning, I would appreciate the guidance :D
