@@ -18,6 +18,14 @@ export default function Home() {
         </div>
         <div className="flex flex-col h-screen justify-center items-center text-center">
           <div className="flex flex-col justfity-center items-sart">
+            <a href="https://devpost.com/software/shower-cxbfr9" className="flex flex-col flex-start items-start p-5">
+                <div className="font-semibold">
+                  Ranked Showers ↗
+                </div>
+                <div>
+                  Project created for DeltaHacks 12, winning Best Use of Solona
+                </div>
+            </a>
             <a href="https://github.com/InukaSilva/Spotify_Gesture_Control" className="flex flex-col flex-start items-start p-5">
                 <div className="font-semibold">
                   Spotify Gesture Controller ↗
