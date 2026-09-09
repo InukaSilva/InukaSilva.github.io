@@ -33,7 +33,10 @@ export default function Home() {
             [] Learn inverse kinematics
           </div>
           <div>
-            [] Robotics project (literally anything)
+            [] PLC Programming
+          </div>
+          <div>
+            [X] Robotics project (literally anything)
           </div>
         </div>
         <div className="flex justify-center items-end h-full">
