@@ -102,7 +102,7 @@ export default function Home() {
             Space, and Control Systems.
           </p>
           <p>
-            Currently looking for summer 2026 co-ops/internships and URA positions :D
+            Currently looking for summer 2027 co-ops/internships and URA positions :D
           </p>
           <a href="/assets/resume.pdf" rel="noopener noreferrer">
             Resume ↗
