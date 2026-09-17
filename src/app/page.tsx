@@ -38,11 +38,13 @@ export default function Home() {
                 GitHub: InukaSilva ↗
               </a>
             </motion.button>
+            {/*
             <motion.button>
               <a href="https://ca.linkedin.com/in/inuka-silva-a367a8244">
                 LinkedIn: Inuka Silva ↗
               </a>
             </motion.button>
+            */}
              <motion.button>
               <a href="https://inuka-silva.itch.io/">
                 Itch.io: Inuka Silva ↗
